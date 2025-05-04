@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link href="./assets/css/style.css" rel="stylesheet">
+		<title>Login Page</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="tab-switch">
+			  <span id="loginTab" class="active" onclick="switchTab('login')">Login</span>
+			  <span id="signupTab" onclick="switchTab('signup')">Signup</span>
+			</div>
+			
+			<!-- Login Form -->
+			<form id="loginForm" class="form active" onsubmit="validFateLogin(event)">
+			  <h2 class="text-center">Login</h2>
+			  <div class="form-group">
+				<input type="email" id="loginEmail" class="form-control" placeholder="Email" required />
+			  </div>
+			  <div class="form-group position-relative">
+				<input type="password" id="loginPassword" minlength="8" class="form-control" placeholder="Password" required />
+				<i class="fas fa-eye-slash toggle-password" onclick="togglePassword('loginPassword')"></i>
+			  </div>
+			  <div class="error" id="loginError"></div>
+			  <button type="submit" class="btn btn-primary btn-block">Login</button>
+			  <p class="text-center mt-3">
+				Don't have an account? 
+				<a href="#" onclick="switchTab('signup')">Sign up</a>
+			  </p>
+			</form>
+			
+			<!-- Signup Form -->
+			<form id="signupForm" class="form" onsubmit="validateSignup(event)">
+			  <h2 class="text-center">Signup</h2>
+			  <div class="form-group">
+				<input type="text" id="signupName" class="form-control" placeholder="Full Name" required />
+			  </div>
+			  <div class="form-group">
+				<input type="email" id="signupEmail" class="form-control" placeholder="Email" required />
+			  </div>
+			  <div class="form-group">
+				<input type="tel" id="signupMobile" class="form-control" placeholder="Mobile (10 digits)" maxlength="10" required />
+			  </div>
+			  <div class="form-group position-relative">
+				<input type="password" id="signupPassword" class="form-control" placeholder="Password (min 8 chars)" minlength="8" required />
+				<i class="fas fa-eye-slash toggle-password" onclick="togglePassword('signupPassword')"></i>
+			  </div>
+			  <div class="form-group position-relative">
+				<input type="password" id="signupConfirmPassword" class="form-control" placeholder="Confirm Password" minlength="8" required />
+				<i class="fas fa-eye-slash toggle-password" onclick="togglePassword('signupConfirmPassword')"></i>
+			  </div>
+			  <div class="error" id="signupError"></div>
+			  <button type="submit" class="btn btn-primary btn-block">Signup</button>
+			  <p class="text-center mt-3">
+				Already have an account? 
+				<a href="#" onclick="switchTab('login')">Login</a>
+			  </p>
+			</form>
+		  </div>
+		
+		  <!-- Bootstrap 4 and FontAwesome JS -->
+		  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+		  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+		<script src="./assets/js/app.js"></script>
+	</body>
+</html>
