@@ -39,7 +39,7 @@ function validateLogin(event) {
  
   if (!passwordRegex.test(password)) {
     error.textContent = "Invalid password.";
-    return
+    return false;
   }
   
   
